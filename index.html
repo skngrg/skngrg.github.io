@@ -16,11 +16,24 @@
 
     <nav>
         <div>
-            <a href="/product.html">to product page</a>
+            <div id="productPage">to product page</div>
         </div>
         <div>
-            <a href="/cart.html">to cart page</a>
+            <div id="cartPage">to cart page</div>
         </div>
     </nav>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          var productPage = document.querySelector('#productPage');
+          var cartPage = document.querySelector('#cartPage');
+
+          productPage.addEventListener('click', () => {
+            window.location.href = '/product.html';
+          });
+          cartPage.addEventListener('click', () => {
+            window.location.href = '/cart.html';
+          });
+        });
+    </script>
   </body>
 </html>
