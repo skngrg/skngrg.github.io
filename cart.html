@@ -14,8 +14,17 @@
     <h1>Product page</h1>
 
     <nav>
-        <a href="/">to home</a>
+        <div id="homePage">to home</a>
     </nav>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          var homePage = document.querySelector('#homePage');
+            
+          homePage.addEventListener('click', () => {
+            window.location.href = '/';
+          });
+        });
+    </script>
 </body>
 </html>
