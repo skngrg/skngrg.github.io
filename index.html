@@ -22,19 +22,21 @@
     <h1>Home page</h1>
 
     <nav>
-        <div id="productPage">to product page</div>
-        <div id="cartPage">to cart page</div>
+        <a id="productPage" href="/product.html">to product page</a>
+        <a id="cartPage" href="/cart.html">to cart page</a>
     </nav>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
           var productPage = document.querySelector('#productPage');
           var cartPage = document.querySelector('#cartPage');
 
-          productPage.addEventListener('click', () => {
+          productPage.addEventListener('click', (e) => {
+            e.preventDefault();
             window.location = '/product.html';
           });
           
-          cartPage.addEventListener('click', () => {
+          cartPage.addEventListener('click', (e) => {
+            e.preventDefault();
             window.location = '/cart.html';
           });
         });
