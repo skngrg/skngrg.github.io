@@ -8,6 +8,19 @@
     <script>
         // Отправляет событие инициализации нативному клиенту
         vkBridge.send('VKWebAppInit');
+
+        // Подписывается на события, отправленные нативным клиентом
+        vkBridge.subscribe(event => {
+          if (!event.detail) {
+            return;
+          }
+        
+          switch(event.detail.type) {
+            case 'VKWebAppChangeFragment':
+              console.log('*** event', event.detail);
+              break;
+          }
+        });
     </script>
     <title>Vite App</title>
     <style>
