@@ -41,6 +41,12 @@
     </nav>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+          var hash = new URLSearchParams((new URL(window.location)).hash.slice(1)).get('href');
+
+          if (hash) {
+            window.location = hash;
+          }
+
           var productPage = document.querySelector('#productPage');
           var cartPage = document.querySelector('#cartPage');
 
