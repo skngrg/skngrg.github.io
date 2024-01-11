@@ -11,13 +11,14 @@
 
         // Подписывается на события, отправленные нативным клиентом
         vkBridge.subscribe(event => {
+          console.log('*** event', event);
           if (!event.detail) {
             return;
           }
         
           switch(event.detail.type) {
             case 'VKWebAppChangeFragment':
-              console.log('*** event', event.detail);
+              console.log('*** VKWebAppChangeFragment', event.detail);
               break;
           }
         });
